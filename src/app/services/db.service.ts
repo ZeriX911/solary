@@ -13,8 +13,8 @@ export class DbService {
   constructor() {
     this.InitService();
    }
-   private db_: Observable<IDBDatabase>;
-  private bodies: Observable<Body[]> ;
+   private db_: Observable<IDBDatabase>=new Observable<IDBDatabase>();
+  private bodies: Observable<Body[]>=new Observable<Body[]>() ;
   
   public getAllBodies():Observable<Body[]>{
     return this.db_.pipe(
@@ -40,8 +40,9 @@ export class DbService {
           transaction.oncomplete = () => {
               
               subscriber.complete();
+              subscriber.unsubscribe();
           };
-          return () => transaction?.abort();
+          return ;
       })))
   }
 
@@ -66,8 +67,8 @@ export class DbService {
     ).pipe(shareReplay({refCount:false,bufferSize:1}));
   }
   private createDataBase(db:IDBDatabase):void{
-    console.log("database has been created as: ",db);
-    db.createObjectStore('bodies');
+
+    db.createObjectStore('bodies',{keyPath:'id',autoIncrement:true});
   }
 
 }

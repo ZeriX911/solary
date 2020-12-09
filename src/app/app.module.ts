@@ -7,15 +7,20 @@ import { environment } from '../environments/environment';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { RenderComponent } from './render/render.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './nav/nav.component';
-
+import { SolarMapComponent } from './solar-map/solar-map.component';
+import {MatTabsModule,MatTabNav,MatTabLink} from '@angular/material/tabs';
+import { FourOfourComponent } from './four-ofour/four-ofour.component';
+import { NavigationComponent } from './navigation/navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
     RenderComponent,
-    NavComponent
+    FourOfourComponent,
+    SolarMapComponent,
+    NavigationComponent
   ],
   imports: [
+    MatTabsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
