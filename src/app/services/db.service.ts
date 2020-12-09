@@ -9,23 +9,23 @@ import { shareReplay, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DbService {
-
+ 
   constructor() {
     this.InitService();
    }
-  private db$: Observable<IDBDatabase> | undefined ;
-  private bodies: Observable<Body[]> | undefined;
+   private db_: Observable<IDBDatabase>;
+  private bodies: Observable<Body[]> ;
   
   public getAllBodies():Observable<Body[]>{
-    return this.db$.pipe(
+    return this.db_.pipe(
       switchMap(
         db=>new Observable<Body[]>(subscriber=>{
           let transaction = db.transaction("bodies");
           const req= transaction.objectStore("bodies").getAll();
           transaction.oncomplete=()=>{
-            transaction=null;
             subscriber.next(req.result as Body[]);
             subscriber.complete();
+            console.log("Values Read from catche");
           }
 
         }
@@ -33,12 +33,12 @@ export class DbService {
     );
   }
   public putAllBodies(Array:Body[]):Observable<never>{
-    return this.db$.pipe(
+    return this.db_.pipe(
       switchMap(db => new Observable<never>(subscriber => {
           let transaction = db.transaction('bodies', 'readwrite');
           Array.forEach(body => transaction.objectStore('bodies').put(body));
           transaction.oncomplete = () => {
-              transaction = null;
+              
               subscriber.complete();
           };
           return () => transaction?.abort();
@@ -46,12 +46,14 @@ export class DbService {
   }
 
   public InitService():void {
-    this.db$= new Observable<IDBDatabase>(
+
+    this.db_ = new Observable<IDBDatabase>(
       (subscriber)=>{
         const open= indexedDB.open("bodies");
         open.onupgradeneeded=()=>{
-          this.createDataBase(open.result)
-        }
+        this.createDataBase(open.result)
+          console.log(open.result);
+      }
         open.onerror=()=>{
           console.log("An error prevented me from creating the database :(");
         }
@@ -65,7 +67,7 @@ export class DbService {
   }
   private createDataBase(db:IDBDatabase):void{
     console.log("database has been created as: ",db);
-    db.createObjectStore("bodies");
+    db.createObjectStore('bodies');
   }
 
 }

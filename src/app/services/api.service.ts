@@ -16,6 +16,7 @@ export class APIService {
   testUrl='https://api.le-systeme-solaire.net/rest.php/bodies/terre';
   getData():Observable<Body[]>
   {
+    console.log("Values Read from API")
     return this.http.get(this.apiURL).pipe(map((object)=>ToBodyArray(object)));
   }
   searchByEngName(Name:string,engName:string):Observable<Body>{
