@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1607594935965,
+  "timestamp": 1607596563037,
   "index": "/solary/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/solary/favicon.ico",
         "/solary/index.html",
-        "/solary/main.42442760b84381ecb802.js",
+        "/solary/main.190d619d780a9083c7bc.js",
         "/solary/manifest.webmanifest",
         "/solary/polyfills.bf99d438b005d57b2b31.js",
         "/solary/runtime.359d5ee4682f20e936e9.js",
@@ -52,8 +52,8 @@
     "/solary/assets/icons/icon-72x72.png": "afb159b23859730f289d47dd347a2661fc14e91e",
     "/solary/assets/icons/icon-96x96.png": "3d362534cb959e246082af38233990a0e798af60",
     "/solary/favicon.ico": "1da1c1201e4813f79db746db76ba975d7520dc3b",
-    "/solary/index.html": "4b09c4e2c3b931abf2d4c07b16e3a5f28109e87a",
-    "/solary/main.42442760b84381ecb802.js": "37a1824f05fad25684127af372264f26f2805f02",
+    "/solary/index.html": "4dfae4ad5d0d66468763bcee4bc5169694c1f79b",
+    "/solary/main.190d619d780a9083c7bc.js": "a080fbe517cc4cdc7f97259315eee4b531a545a4",
     "/solary/manifest.webmanifest": "8acd6b3314148bc1080ff0be2cdd273f9e8b1d5e",
     "/solary/polyfills.bf99d438b005d57b2b31.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
     "/solary/runtime.359d5ee4682f20e936e9.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
