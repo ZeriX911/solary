@@ -1,6 +1,10 @@
 <script src="/node_modules/animejs/lib/anime.min.js"></script>
 <div *ngIf="planets===[]">loading the stuff</div>
 
+<mat-form-field class="example-full-width">
+    <mat-label>Look for specific planet</mat-label>
+    <input matInput placeholder="Ex. Pizza" (keyup)="onSubmit($event)">
+</mat-form-field>
 <div class="grid-container">
     <mat-grid-list cols="2" rowHeight="700" [@items]="planets.length">
         <mat-grid-tile *ngFor='let planet of planets' [colspan]="1" [rowspan]="1">

@@ -36,3 +36,14 @@
     .adat {
         float: right;
     }
+    
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        margin: 5vh 5vw 5vh 5vw;
+    }
+    
+    .example-full-width {
+        width: 100%;
+    }

@@ -5,6 +5,7 @@ import { Body } from '../objects'
 import { DbService } from '../services/db.service';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -22,6 +23,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
   ]
 
 })
+
 export class MainComponent implements OnInit, AfterViewInit {
   private subscription:Subscription;
   bodies: Body[] =[];
@@ -37,7 +39,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     'neptune',
     'pluton'
   ];
-
+  //searchStuff=string.split('');
   constructor(private main: SolaryService, private db: DbService) {
    this.subscription= this.main.getBodies().subscribe(data => this.bodies = data).add( 
     this.subscription=this.db.getBodiesById(this.requiredStuff).subscribe(x=>this.planets=x)
@@ -48,11 +50,16 @@ export class MainComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
 
   }
-
+  onSubmit(event:any) {
+    let arra:string[]=[];
+    arra[0]=event.target.value;
+    this.subscription=this.db.getBodiesById(arra).subscribe(x=>this.planets=x);
+  }
+  
  
   ngOnDestroy(){
    this.subscription.unsubscribe(); 
-
+    
   }
   ngOnInit(): void {
 
