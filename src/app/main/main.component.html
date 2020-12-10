@@ -1,0 +1,4 @@
+<script src="/node_modules/animejs/lib/anime.min.js"></script>
+<div [@items]="planets.length">
+    <div class="planets" *ngFor='let planet of planets'>{{planet.englishName}}</div>
+</div>

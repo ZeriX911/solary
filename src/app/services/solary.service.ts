@@ -8,7 +8,7 @@ import { DbService } from './db.service'
   providedIn: 'root'
 })
 export class SolaryService {
-
+  bodies:Observable<Body[]>|undefined;
   constructor(
     private api: APIService,
     private storage: DbService

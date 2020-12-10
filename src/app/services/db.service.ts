@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of,Observable, Subject } from 'rxjs';
+import { of,Observable, Subject, observable } from 'rxjs';
 import { Moon,Body,Planet} from "../objects";
 import { APIService } from "../services/api.service";
 import { shareReplay, switchMap } from 'rxjs/operators';
@@ -53,7 +53,6 @@ export class DbService {
         const open= indexedDB.open("bodies");
         open.onupgradeneeded=()=>{
         this.createDataBase(open.result)
-          console.log(open.result);
       }
         open.onerror=()=>{
           console.log("An error prevented me from creating the database :(");
@@ -70,5 +69,21 @@ export class DbService {
 
     db.createObjectStore('bodies',{keyPath:'id',autoIncrement:true});
   }
+  public getBodiesById(ids:string[]):Observable<Body[]>{
+    return this.db_.pipe(
+      switchMap(dataBase=>new Observable<Body[]>(
+        sub=>{ 
+        let transaction = dataBase.transaction('bodies');
+        const req = ids.map(id=>transaction.objectStore('bodies').get(id));
+        transaction.oncomplete=()=>{
+          sub.next(req.map(request=>request.result));
+          sub.complete();
+        };
+        return;
+        }))
+    );
+  }
+ }
+  
+  
 
-}

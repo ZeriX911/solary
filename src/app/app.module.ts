@@ -4,28 +4,53 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { RenderComponent } from './render/render.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SolarMapComponent } from './solar-map/solar-map.component';
-import {MatTabsModule,MatTabNav,MatTabLink} from '@angular/material/tabs';
-import { FourOfourComponent } from './four-ofour/four-ofour.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HttpClientModule} from '@angular/common/http';
+import { MainComponent } from './main/main.component';
+import { TitleComponent } from './title/title.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { NavComponent } from './nav/nav.component';
+import { ListComponent } from './list/list.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     AppComponent,
-    RenderComponent,
-    FourOfourComponent,
-    SolarMapComponent,
-    NavigationComponent
+    MainComponent,
+    TitleComponent,
+    FooterComponent,
+    NavComponent,
+    ListComponent,
   ],
   imports: [
-    MatTabsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    BrowserAnimationsModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

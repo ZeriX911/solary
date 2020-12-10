@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, pipe, throwError ,of} from 'rxjs';
 import { catchError, map, retry, switchMap, tap } from 'rxjs/operators';
 import { Moon } from "../objects/moon";
-import { Body } from "../objects/body";
+import { Body,Vol,Mass,AroundPlanet } from "../objects/body";
 import { Planet } from "../objects/planet";
 
 @Injectable({

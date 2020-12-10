@@ -1,0 +1,9 @@
+.planet {
+    background-color: black;
+    width: 300px;
+    border: 3px rgb(0, 225, 255), solid;
+    height: 300px;
+    border-radius: 300px;
+    color: rgb(0, 225, 255);
+    font-size: xx-large;
+}
