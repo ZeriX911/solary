@@ -15,58 +15,59 @@
                 </mat-card-header>
                 <mat-card-content class="dashboard-card-content">
                     <ul>
-                        <p>Data:</p>
+                        <p id="head">Data:</p>
                         <li>
-                            <div><span class="data">perihelion</span><span class="adat">{{planet.perihelion}}</span></div>
+                            <div><span class="data">Perihelion:</span><span class="adat">{{planet.perihelion}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data" class="data">aphelion</span><span class="adat">{{planet.aphelion}}</span></div>
+                            <div><span class="data" class="data">Aphelion:</span><span class="adat">{{planet.aphelion}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">eccentricity</span><span class="adat">{{planet.eccentricity}}</span></div>
+                            <div><span class="data">Eccentricity:</span><span class="adat">{{planet.eccentricity}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">inclination</span><span class="adat">{{planet.inclination}}</span></div>
+                            <div><span class="data">Inclination:</span><span class="adat">{{planet.inclination}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">density</span><span class="adat">{{planet.density}}</span></div>
+                            <div><span class="data">Density:</span><span class="adat">{{planet.density}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">gravity</span><span class="adat">{{planet.gravity}}</span></div>
+                            <div><span class="data">Gravity:</span><span class="adat">{{planet.gravity}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">escape</span><span class="adat">{{planet.escape}}</span></div>
+                            <div><span class="data">Escape:</span><span class="adat">{{planet.escape}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">meanRadius</span><span class="adat">{{planet.meanRadius}}</span></div>
+                            <div><span class="data">Mean radius:</span><span class="adat">{{planet.meanRadius}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">equaRadius</span><span class="adat">{{planet.equaRadius}}</span></div>
+                            <div><span class="data">Equa radius:</span><span class="adat">{{planet.equaRadius}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">polarRadius</span><span class="adat">{{planet.polarRadius}}</span></div>
+                            <div><span class="data">Polar radius:</span><span class="adat">{{planet.polarRadius}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">flattening</span><span class="adat">{{planet.flattening}}</span></div>
+                            <div><span class="data">Flattening:</span><span class="adat">{{planet.flattening}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">dimension</span><span class="adat">{{planet.dimension}}</span></div>
+                            <div><span class="data">Dimension:</span><span class="adat">{{planet.dimension}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">sideralOrbit</span><span class="adat">{{planet.sideralOrbit}}</span></div>
+                            <div><span class="data">Sideral orbit:</span><span class="adat">{{planet.sideralOrbit}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">sideralRotation</span><span class="adat">{{planet.sideralRotation}}</span></div>
+                            <div><span class="data">Sideral rotation:</span><span class="adat">{{planet.sideralRotation}}</span></div>
                         </li>
                         <li>
-                            <div><span class="data">Discovered by</span><span class="adat">{{planet.discoveredBy}}</span></div>
+                            <div><span class="data">AxialTilt:</span><span class="adat">{{planet.axialTilt}}</span></div>
                         </li>
-                        <li>
+                        <li *ngIf="planet.discoveredBy">
+                            <div><span class="data">Discovered by:</span><span class="adat">{{planet.discoveredBy}}</span></div>
+                        </li>
+                        <li *ngIf="planet.discoveryDate">
                             <div><span class="data">Date:</span><span class="adat">{{planet.discoveryDate}}</span></div>
                         </li>
-                        <li>
-                            <div><span class="data">axialTilt</span><span class="adat">{{planet.axialTilt}}</span></div>
-                        </li>
+
                     </ul>
                 </mat-card-content>
             </mat-card>
