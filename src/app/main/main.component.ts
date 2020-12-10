@@ -12,7 +12,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
   animations: [
     trigger('items', [
       transition('* => *', [
-        query('.planets',style({ transform: 'translateX(-100%)'})),
+        query('.planets',style({ transform: 'translateX(-1000%)'})),
         query('.planets',
           stagger('600ms', [
             animate('900ms', style({ transform: 'translateX(0)'}))

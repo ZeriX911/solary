@@ -1,9 +1,38 @@
-.planet {
-    background-color: black;
-    width: 300px;
-    border: 3px rgb(0, 225, 255), solid;
-    height: 300px;
-    border-radius: 300px;
-    color: rgb(0, 225, 255);
-    font-size: xx-large;
-}
+    .planet {
+        background-color: black;
+        border: 3px rgb(0, 225, 255), solid;
+        border-radius: 300px;
+        color: rgb(0, 225, 255);
+        font-size: xx-large;
+    }
+    
+    .grid-container {
+        margin: 20px;
+    }
+    
+    .dashboard-card {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+    
+    .more-button {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+    
+    .dashboard-card-content {
+        padding-bottom: 3vh;
+    }
+    
+    .data {
+        float: left;
+        font-weight: bold;
+    }
+    
+    .adat {
+        float: right;
+    }
