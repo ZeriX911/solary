@@ -1,11 +1,18 @@
 <script src="/node_modules/animejs/lib/anime.min.js"></script>
-<div *ngIf="planets===[]">loading the stuff</div>
 
-<mat-form-field class="example-full-width">
-    <mat-label>Look for specific planet</mat-label>
-    <input matInput placeholder="Ex. Pizza" (keyup)="onSubmit($event)">
-</mat-form-field>
-<div class="grid-container">
+<div class="searchBar">
+    <mat-form-field class="example-full-width">
+        <mat-label>Look for specific planet by latin name</mat-label>
+        <input matInput placeholder="For example: terre" (keyup)="onSubmit($event)">
+
+    </mat-form-field>
+    <mat-icon aria-hidden="false" aria-label="search">search</mat-icon>
+</div>
+<div id="loader" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="grid-container" *ngIf="planets!=undefined">
     <mat-grid-list cols="2" rowHeight="700" [@items]="planets.length">
         <mat-grid-tile *ngFor='let planet of planets' [colspan]="1" [rowspan]="1">
             <mat-card class="dashboard-card planets">

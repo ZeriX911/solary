@@ -26,8 +26,9 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
 
 export class MainComponent implements OnInit, AfterViewInit {
   private subscription:Subscription;
+  loading:boolean=true;
   bodies: Body[] =[];
-  planets: Body[] =[];
+  planets: Body[]|undefined;
   requiredStuff = [
     'mercure',
     'venus',
@@ -41,24 +42,40 @@ export class MainComponent implements OnInit, AfterViewInit {
   ];
   //searchStuff=string.split('');
   constructor(private main: SolaryService, private db: DbService) {
-   this.subscription= this.main.getBodies().subscribe(data => this.bodies = data).add( 
-    this.subscription=this.db.getBodiesById(this.requiredStuff).subscribe(x=>this.planets=x)
-    );
+  this.main.getBodies().subscribe(data => this.bodies = data); 
+   
+    
     
     
   }
   ngAfterViewInit(): void {
+    this.subscription=this.db.getBodiesById(this.requiredStuff).subscribe(x=>this.planets=x)
+    if (this.planets==undefined) {
+      this.loading=true;
+    }
 
   }
+  ngDoCheck(){
+    if (this.planets==undefined) {
+      this.loading=true;
+    }else{
+      this.loading=false;
+    }
+  }
   onSubmit(event:any) {
+    if (event.target.value===""||event.target.value===undefined) {
+      this.subscription=this.db.getBodiesById(this.requiredStuff).subscribe(x=>this.planets=x);
+      return
+    }
+    console.log(this.planets);
     let arra:string[]=[];
-    arra[0]=event.target.value;
+    arra=event.target.value.split(',');
     this.subscription=this.db.getBodiesById(arra).subscribe(x=>this.planets=x);
   }
   
  
   ngOnDestroy(){
-   this.subscription.unsubscribe(); 
+   this.subscription.unsubscribe();
     
   }
   ngOnInit(): void {

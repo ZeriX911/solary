@@ -79,7 +79,6 @@ export class DbService {
           sub.next(req.map(request=>request.result));
           sub.complete();
         };
-        return;
         }))
     );
   }

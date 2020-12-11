@@ -24,6 +24,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { MatInputModule } from '@angular/material/input';
     ListComponent,
   ],
   imports: [
+    MatProgressSpinnerModule,
     MatInputModule,
     BrowserAnimationsModule,
     BrowserModule,
