@@ -42,7 +42,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   ];
   //searchStuff=string.split('');
   constructor(private main: SolaryService, private db: DbService) {
-  this.main.getBodies().subscribe(data => this.bodies = data); 
+  this.subscription=this.main.getBodies().subscribe(data => this.bodies = data); 
    
     
     

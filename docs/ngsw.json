@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "timestamp": 1607681863351,
+  "index": "/solary/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/solary/favicon.ico",
+        "/solary/index.html",
+        "/solary/main.7e6c65eb9485c83c0ef5.js",
+        "/solary/manifest.webmanifest",
+        "/solary/polyfills.bf99d438b005d57b2b31.js",
+        "/solary/runtime.359d5ee4682f20e936e9.js",
+        "/solary/styles.e9fd884999e8928218c9.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/solary/assets/icons/icon-128x128.png",
+        "/solary/assets/icons/icon-144x144.png",
+        "/solary/assets/icons/icon-152x152.png",
+        "/solary/assets/icons/icon-192x192.png",
+        "/solary/assets/icons/icon-384x384.png",
+        "/solary/assets/icons/icon-512x512.png",
+        "/solary/assets/icons/icon-72x72.png",
+        "/solary/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/solary/assets/icons/icon-128x128.png": "985b20b1500e811a1f122d925e3df4484258e966",
+    "/solary/assets/icons/icon-144x144.png": "a98810d2340f2e06b2d6773a60ef11481ea228e1",
+    "/solary/assets/icons/icon-152x152.png": "8996722e7e207b3848e267a432c7ea5eaa183f0d",
+    "/solary/assets/icons/icon-192x192.png": "e516d17b8d6807768e79725425aa64607009571b",
+    "/solary/assets/icons/icon-384x384.png": "27605e7a6f13c3ee54e7602d220d9f5aa8d61404",
+    "/solary/assets/icons/icon-512x512.png": "f04cfaf7152fc2817add4a8f95699664516774b5",
+    "/solary/assets/icons/icon-72x72.png": "afb159b23859730f289d47dd347a2661fc14e91e",
+    "/solary/assets/icons/icon-96x96.png": "3d362534cb959e246082af38233990a0e798af60",
+    "/solary/favicon.ico": "1da1c1201e4813f79db746db76ba975d7520dc3b",
+    "/solary/index.html": "0be7a7b778b0952707cb977eaac6ce718755d38c",
+    "/solary/main.7e6c65eb9485c83c0ef5.js": "c9e3aeea45eea05c90f01cfc2aba74b628a58574",
+    "/solary/manifest.webmanifest": "8acd6b3314148bc1080ff0be2cdd273f9e8b1d5e",
+    "/solary/polyfills.bf99d438b005d57b2b31.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
+    "/solary/runtime.359d5ee4682f20e936e9.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/solary/styles.e9fd884999e8928218c9.css": "0e1770ec6e6bb322a77649b15ce989c932f81951"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
